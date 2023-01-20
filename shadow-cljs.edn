@@ -1,0 +1,8 @@
+{:lein         {:profile "+shadow-cljs"}
+ :builds       {:app {:target     :browser
+                      :output-dir "resources/public/js"
+                      :asset-path "/js"
+                      :compiler-options {:externs ["datascript/externs.js"]}
+                      :modules    {:app {:init-fn dataman.core/init!}}}}
+ :dev-http     {3000 {:root    "resources/public"
+                      :handler dataman.handler/app}}}
